@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jameel Asfer</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      padding-top: 70px;
+    }
+
+    .flip-card {
+    perspective: 1000px;
+  }
+
+  .flip-inner {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    height: 100%;
+  }
+
+  .flip-card.flipped .flip-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-front, .flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    top: 0;
+    left: 0;
+    border-radius: 0.375rem;
+    padding: 1.25rem;
+  }
+
+  .flip-back {
+    transform: rotateY(180deg);
+    background-color: #fff;
+  }
+  </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70" tabindex="0">
+  <header>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm" id="navbar">
+  <div class="container-fluid">
+    
+    <!-- Toggler (left) -->
+    <button class="navbar-toggler me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">Mohammed Jameel Asfer</a>
+
+    <!-- Horizontal links for large screens -->
+    <div class="collapse navbar-collapse d-none d-lg-block">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#education-skills">Studies and Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#mygithub">Projects</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="#certificates">Certifications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#achievements">Achievements</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Offcanvas Sidebar for small screens -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar">
+
+    <div class="offcanvas-header">
+    <h5 class="offcanvas-title">Menu</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+
+  <div class="offcanvas-body">
+
+    <!-- Profile Info -->
+    <div class="text-center mb-4">
+      <img src="pfp.jpeg" class="rounded-circle mb-2" width="80" alt="Profile" />
+      <h5>Mohammed Jameel Asfer</h5>
+      <p class="text-muted">Web Developer</p>
+    </div>
+
+    
+    <!-- Nav Links (auto-dismiss offcanvas on click) -->
+    <ul class="navbar-nav">
+    <li class="nav-item">
+    <a class="nav-link" href="#" data-target="#about" onclick="navigateAndClose(this)">About</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="#" data-target="#education-skills" onclick="navigateAndClose(this)">Studies and Skills</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="#" data-target="#mygithub" onclick="navigateAndClose(this)">Projects</a>
+    </li>
+    
+    <li class="nav-item">
+    <a class="nav-link" href="#" data-target="#certificates" onclick="navigateAndClose(this)">Certifications</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="#" data-target="#achievements" onclick="navigateAndClose(this)">Achievements</a>
+    </li>
+    </ul>
+
+    <hr>
+
+    <!-- Popular Posts -->
+    <h6>Featured</h6>
+    <ul class="list-unstyled">
+      <li class="d-flex mb-3">
+        <img src="https://media.licdn.com/dms/image/v2/D562DAQG5H6_RX_n3Sw/profile-treasury-image-shrink_1280_1280/profile-treasury-image-shrink_1280_1280/0/1692688493974?e=1754409600&v=beta&t=A6Kp5dpn-Zk6Dt6mAXeHsl2aqBddJs3wq08iTxgpBMU"
+             class="img-thumbnail me-2" width="60"/>
+        <div>
+          <a href="https://www.linkedin.com/in/jameel-asfer-z/overlay/1635538104560/single-media-viewer/?profileId=ACoAAEFPwX0B3tHtt74cn2TUaFWeLUV-rbwhja8" target="_blank" class="text-decoration-none read-more" data-title="IAENG">
+          Member
+          </a>
+          <small class="text-muted d-block">IAENG</small>
+        </div>
+      </li>
+      <li class="d-flex mb-3">
+        <img src="https://media.licdn.com/dms/image/v2/D5622AQEvBfvSLBvUDA/feedshare-shrink_1280/feedshare-shrink_1280/0/1713168743235?e=1756944000&v=beta&t=u182Z6BNDlAAVqWYQ39w7H0S05IcztU6C6-L0FoJQHo"
+             class="img-thumbnail me-2" width="60"/>
+        <div>
+          <a href="https://www.linkedin.com/posts/jameel-asfer-z_oraclecertified-cloudinfrastructure-achievementunlocked-activity-7185550520336461824-VCJh?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEFPwX0B3tHtt74cn2TUaFWeLUV-rbwhja8" target="_blank" class="text-decoration-none read-more" data-title="IAENG">
+          Certified Foundation Associate
+          </a>
+          <small class="text-muted d-block">Oracle</small>
+        </div>
+      </li>
+      <li class="d-flex mb-3">
+        <img src="https://media.licdn.com/dms/image/v2/D5622AQHcS4Enkai_6A/feedshare-shrink_1280/feedshare-shrink_1280/0/1732631501667?e=1756944000&v=beta&t=Nfd5qfPExzjUQdPINTkx2BPLT8mQouh4NBxGQxVlJCI"
+             class="img-thumbnail me-2" width="60"/>
+        <div>
+          <a href="https://www.linkedin.com/posts/jameel-asfer-z_research-conference-radest2024-activity-7267183249880166400-gO5a?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEFPwX0B3tHtt74cn2TUaFWeLUV-rbwhja8" target="_blank" class="text-decoration-none read-more" data-title="IAENG">
+          Participant - RADEST 2024
+          </a>
+          <small class="text-muted d-block">MSAJCE</small>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="container">
+  <!-- About Section -->
+  <section id="about" class="my-5">
+    <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <h1 class="display-5 fw-bold">Hi, I am Jameel !</h1>
+            <p class="fs-4">I’m a motivated Web Developer skilled in building interactive and efficient web applications . With hands-on experience in front-end development and responsive UI/UX design, I specialize in developing secure, real-time, and scalable solutions. I’m passionate about turning innovative ideas into functioning applications and continuously improving through projects, internships, and academic learning.</p>
+          </div>
+          <div class="col-md-4 text-center">
+            <img src="pfp.jpeg" alt="Profile Picture" class="img-fluid shadow">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & Skills Section -->
+  <section id="education-skills" class="my-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Studies & Skills</h2>
+    <div class="row g-5">
+
+      <!-- Education -->
+      <div class="col-md-6">
+        <h4 class="mb-3">Education</h4>
+        <div class="card mb-3 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Bachelor of Engineering</h5>
+            <p class="card-text mb-1"><strong>University:&nbsp;</strong>Mohamed Sathak AJ College Of Engineering</p>
+            <p class="card-text mb-1"><strong>CGPA:&nbsp;</strong> 8.34</p>
+            <p class="card-text"><strong>Graduation:&nbsp;</strong> 2025</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="col-md-6">
+        <h4 class="mb-3">Skills</h4>
+        <div class="row">
+          <div class="col-6">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><i class="fab fa-java fa-lg me-4 text-dark"></i>Java</li>
+              <li class="list-group-item"><i class="fa-solid fa-database me-4 text-warning"></i>MySQL</li>
+              <li class="list-group-item"><i class="fa-brands fa-js fa-lg me-2 text-warning"></i><strong>JavaScript</strong></li>
+            </ul>
+          </div>
+          <div class="col-6">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><i class="fa-brands fa-angular me-4 text-danger"></i>Angular</li>
+              <li class="list-group-item"><i class="fa-brands fa-bootstrap me-4 text-purple" ></i>Bootstrap</li>
+              <li class="list-group-item"><i class="fa-brands fa-figma fa-lg me-2 text-dark" ></i><strong>Figma</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </section>
+
+
+  <!-- experience -->
+   <section id="experience" class="my-5 py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Work Experience</h2>
+    
+    <div class="timeline">
+      <div class="mb-4">
+        <h5 class="fw-bold mb-1">Intern – Web Developer</h5>
+        <p class="mb-0 text-muted">Cognifyz Technologies | Feb 2024 | <a href="https://github.com/ZAM33L/Practice-Session-on-Backend-Web-Development">GitHub</a></p>
+        <p>Performed tasks involving server communication, dynamic DOM manipulation, API integration, and interactive front-end development.</p>
+      </div>
+
+      <div class="mb-4">
+        <h5 class="fw-bold mb-1">Intern – Web Developer</h5>
+        <p class="mb-0 text-muted">LearnFlow Services | Jan 2024 | <a href="https://github.com/ZAM33L/LF-WD-ONLINE_LEARNING_APP">GitHub</a></p>
+        <p>Contributed front-end development while exploring concepts related to Learning Management Systems (LMS) and E-commerce platforms.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- GitHub Section -->
+  <section id="mygithub" class="my-5">
+  <div class="container py-5">
+    <h2 class="text-center mb-4">My Projects</h2>
+    <div class="row g-4">
+
+      <!-- Card 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <!-- <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240117155347/responsive-web-design-copy.webp" class="card-img-top" alt="..."> -->
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Veri-Fi</h5>
+            <p class="card-text">A presence verification system for events and workspaces, designed based on Quick Response Code system , using Angular and SpringBoot</p>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <small class="text-muted">June 21, 2025</small>
+              <a href="https://github.com/ZAM33L/Veri-Fi" target="_blank" class="btn btn-sm btn-outline-primary read-more" data-title="Veri-Fi">Explore</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <!-- <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240117155347/responsive-web-design-copy.webp" class="card-img-top" alt="Mooviezz"> -->
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Mooviezz</h5>
+            <p class="card-text">Mooviezz is a sleek, modern movie discovery web app built using Angular. It allows users to browse trending movies, view detailed movie information, and explore by genres — all through a clean, responsive interface.</p>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <small class="text-muted">May 10, 2025</small>
+              <a href="https://github.com/ZAM33L/Mooviezz" target="_blank" class="btn btn-sm btn-outline-primary read-more" data-title="Mooviezz">Explore</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <!-- <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240117155347/responsive-web-design-copy.webp" class="card-img-top" alt="sneakers"> -->
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">sneakers</h5>
+            <p class="card-text">A lightweight, vanilla JavaScript e-commerce app featuring a product gallery, shopping cart, and checkout flow.</p>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <small class="text-muted">April 8, 2025</small>
+              <a href="https://github.com/ZAM33L/LF-WD-ECOMMERCE_APP" target="_blank" class="btn btn-sm btn-outline-primary read-more" data-title="sneakers">Explore</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-6 col-lg-4 mx-auto">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body d-flex flex-column">
+            
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <small class="text-muted">To know more</small>
+              <a href="https://github.com/ZAM33L" target="_blank" class="btn btn-sm btn-outline-primary read-more" data-title="profile"><i class="bi bi-github me-2"></i>GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <!-- Certificates Section -->
+  <section id="certificates" class="my-5">
+  <div class="container py-5">
+    <h2 class="text-center mb-4">Certifications</h2>
+    <div class="row g-4">
+
+      <!-- Card 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <!-- <img src="https://media.licdn.com/dms/image/v2/D562DAQGa3QoCT4u8FQ/profile-treasury-image-shrink_800_800/B56ZfA8_mOHoAo-/0/1751288907073?e=1754409600&v=beta&t=wuv2WtvGN6kwO4BBvYAIb4fYgoxhRUk3eI5L55cX9L4" class="card-img-top" alt="..."> -->
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Angular Web Developer Certification</h5>
+            <p class="card-text">Infosys Springboard</p>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <small class="text-muted">Issued June 2025</small>
+              <a href="https://www.linkedin.com/in/jameel-asfer-z/details/certifications/" target="_blank" class="btn btn-sm btn-outline-primary read-more" data-title="Veri-Fi">View</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <!-- <img src="https://media.licdn.com/dms/image/v2/D562DAQH4TNWNrKUN8w/profile-treasury-image-shrink_800_800/B56ZWHika9HsAg-/0/1741735742457?e=1754409600&v=beta&t=ezcSj5A78NKVYYKR-ociJaGSYf3p4Gumsh9ypStxgdk" class="card-img-top" alt="..."> -->
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Core Java Programming</h5>
+            <p class="card-text">Smart Skills Technologies</p>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <small class="text-muted">Issued April 2024</small>
+              <a href="https://www.linkedin.com/in/jameel-asfer-z/details/certifications/" target="_blank" class="btn btn-sm btn-outline-primary read-more" data-title="Veri-Fi">View</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <!-- <img src="https://media.licdn.com/dms/image/v2/D562DAQFh3J8jQc229Q/profile-treasury-image-shrink_800_800/B56ZWHli2QGUAY-/0/1741736523135?e=1754413200&v=beta&t=8x9Q-yQYZuh8HniTEZsM0h1GmLSqGSyKK8RfSVUCTFs" class="card-img-top" alt="..."> -->
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Introduction to Front-End Development</h5>
+            <p class="card-text">Meta</p>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <small class="text-muted">Issued November 2023</small>
+              <a href="https://www.linkedin.com/in/jameel-asfer-z/details/certifications/" target="_blank" class="btn btn-sm btn-outline-primary read-more" data-title="Veri-Fi">View</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="col-md-6 col-lg-4 mx-auto">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body d-flex flex-column">
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <small class="text-muted">To know more</small>
+              <a href="https://www.linkedin.com/in/jameel-asfer-z/details/certifications/" target="_blank" class="btn btn-sm btn-outline-primary read-more" data-title="profile"><i class="bi bi-linkedin me-2"></i>Enter</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section id="achievements" class="my-5">
+  <div class="container py-5">
+    <h2 class="text-center mb-4">Achievements</h2>
+    <div class="row g-4">
+
+      <!-- Card 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img src="https://media.licdn.com/dms/image/v2/D5622AQGOJWViPnRSug/feedshare-shrink_1280/feedshare-shrink_1280/0/1710681000524?e=1756944000&v=beta&t=IWzyKVp8_wxvix4BtFqKI54AMjAHqVQ9-y29re2_L4k" class="card-img-top" alt="...">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Star Student Award</h5>
+            <p class="card-text">Mohamed Sathak AJ College Of Engineering</p>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <small class="text-muted">Awarded for academic excellence</small>
+              <a href="https://www.linkedin.com/posts/jameel-asfer-z_msajcealumniassociation-starstudent-activity-7175116167315955714-QlQJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEFPwX0B3tHtt74cn2TUaFWeLUV-rbwhja8" target="_blank" class="btn btn-sm btn-outline-primary read-more" data-title="Veri-Fi">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img src="https://media.licdn.com/dms/image/v2/D5622AQFB6QMSG3KpdQ/feedshare-shrink_2048_1536/B56ZQIXBTSHIAo-/0/1735307044227?e=1756944000&v=beta&t=bS4lagW-eIEcOltWU0w9ITePicXHwUTXIF79iiDlI7w" class="card-img-top" alt="...">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Tata Imagination Challenge 2024</h5>
+            <p class="card-text">Tata Group</p>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <small class="text-muted">Advanced to Round 2 in a 3-stage contest</small>
+              <a href="https://www.linkedin.com/posts/jameel-asfer-z_innovation-challenge-tataimaginationchallenge-activity-7278405283461189633-NtgG?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEFPwX0B3tHtt74cn2TUaFWeLUV-rbwhja8" target="_blank" class="btn btn-sm btn-outline-primary read-more" data-title="Veri-Fi">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img src="https://media.licdn.com/dms/image/v2/D4E22AQFjNYZWkRV3PQ/feedshare-shrink_1280/feedshare-shrink_1280/0/1699547076221?e=1756944000&v=beta&t=s3nzoxNDwrq-f6J85A1YZ0C5CzK4AcaI9UonFwU9r8c" class="card-img-top" alt="...">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">International Conference on Artificial Intelligence and Autonomous Systems</h5>
+            <p class="card-text"> Indra Ganesan College of Engineering</p>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <small class="text-muted">Presented a research paper on <br><strong>Theft Protection in Vehicle Systems</strong></small>
+              <a href="https://www.linkedin.com/posts/jameel-asfer-z_dear-all-i-am-happy-to-share-that-we-activity-7128417109029609472-A5cc?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEFPwX0B3tHtt74cn2TUaFWeLUV-rbwhja8" target="_blank" class="btn btn-sm btn-outline-primary read-more" data-title="Veri-Fi">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="col-md-6 col-lg-4 mx-auto">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body d-flex flex-column">
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <small class="text-muted">To know more</small>
+              <a href="https://www.linkedin.com/in/jameel-asfer-z/recent-activity/all/" target="_blank" class="btn btn-sm btn-outline-primary read-more" data-title="profile"><i class="bi bi-linkedin me-2"></i>Enter</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </section>
+
+</main>
+<!-- Footer -->
+<footer class="bg-light text-dark mt-5 pt-5 pb-4">
+  <div class="container text-center text-md-start">
+    <div class="row">
+
+      <!-- Branding -->
+      <!-- Quick Links -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+        <h5 class="text-uppercase fw-bold mb-3">
+          <p><a href="#" class="text-dark text-decoration-none">Jameel Asfer</a></p>
+        </h5>
+       
+      </div>
+
+      
+
+      <!-- Contact -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+        <h5 class="text-uppercase fw-bold mb-3">Connect</h5>
+        <p>
+          <a href="https://github.com/ZAM33L" target="_blank" class="text-dark text-decoration-none">
+            <i class="bi bi-github me-2"></i>GitHub
+          </a>
+        </p>
+        <p>
+          <a href="https://www.linkedin.com/in/jameel-asfer-z/" target="_blank" class="text-dark text-decoration-none">
+            <i class="bi bi-linkedin me-2"></i>LinkedIn
+          </a>
+        </p>
+        <p><i class="bi bi-envelope me-2"></i><a href="mailto:jameelasferzee@gmail.com" class="text-dark text-decoration-none">jameelasferzee@gmail.com</a></p>
+      </div>
+
+      
+
+    </div>
+
+    <!-- Divider -->
+    <hr class="my-4">
+
+    <!-- Copyright -->
+    <div class="text-center">
+      <p class="mb-0">&copy; 2025 Jameel Asfer. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+   //code for navbar
+   function navigateAndClose(link) {
+    const targetSelector = link.getAttribute('data-target');
+    const target = document.querySelector(targetSelector);
+    const offcanvasElement = document.querySelector('.offcanvas');
+    const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement);
+
+    if (offcanvas) {
+      offcanvas.hide();
+      // Wait for animation to finish before scrolling
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }, 300);
+    } else {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  //code for flipping
+  document.querySelectorAll('.flip-btn').forEach(button => {
+    button.addEventListener('click', function () {
+      const card = this.closest('.flip-card');
+      card.classList.toggle('flipped');
+    });
+  });
+</script>
+</body>
+</html>
